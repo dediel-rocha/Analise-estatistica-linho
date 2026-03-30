@@ -291,3 +291,18 @@ if __name__ == "__main__":
     analise_grafica(df_limpo, continuas, discretas)
     
     print("\nAnálise concluída com sucesso! Verifique as imagens na sua pasta.")
+
+    EXECUÇÃO PRINCIPAL
+# ==========================================
+if __name__ == "__main__":
+    # NOME DO NOVO ARQUIVO DE DADOS
+    arquivo_excel = 'Conjunta.xlsx'
+    
+    df_raw, continuas, discretas = carregar_dados(arquivo_excel)
+    df_limpo = remover_outliers_iqr(df_raw, continuas)
+    gerar_tabelas_finais(df_limpo, continuas, discretas)
+    
+    # Chama a função corrigida que gera o Boxplot e a Correlação
+    analise_grafica(df_limpo, continuas, discretas)
+    
+    print("\nAnálise concluída com sucesso! Verifique as imagens na sua pasta.")
